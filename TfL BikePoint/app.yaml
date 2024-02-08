@@ -1,0 +1,21 @@
+name: TfL BikePoint
+language: python
+variables:
+  - name: output
+    inputType: OutputTopic
+    description: This is the output topic for TfL BikePoint data
+    defaultValue: tfl-bikepoint-data
+    required: true
+  - name: tfl_primary_key
+    inputType: FreeText
+    description: TfL Primary Key
+    defaultValue: 0bd0c50e0d104aa8b5e30c4b52da976e
+    required: true
+  - name: tfl_secondary_key
+    inputType: FreeText
+    description: TfL Secondary Key
+    defaultValue: 51d1e915e8f9419da98ad2fd4295ec00
+    required: true
+dockerfile: dockerfile
+runEntryPoint: main.py
+defaultFile: quix_functions.py
