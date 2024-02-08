@@ -31,6 +31,26 @@ deployments:
         description: TfL Secondary Key
         required: true
         value: 51d1e915e8f9419da98ad2fd4295ec00
+  - name: Slack
+    application: Slack
+    deploymentType: Service
+    version: 725d7d1b1870eb99636d50878fc75a6d825d34f2
+    resources:
+      cpu: 200
+      memory: 200
+      replicas: 1
+    desiredStatus: Running
+    variables:
+      - name: input
+        inputType: InputTopic
+        description: Name of the input topic to listen to.
+        required: true
+        value: hard-braking
+      - name: webhook_url
+        inputType: FreeText
+        description: The webhook url to send notifications to
+        required: true
+        value: https://hooks.slack.com/services/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
 
 # This section describes the Topics of the data pipeline
 topics:
