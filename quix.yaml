@@ -33,4 +33,11 @@ deployments:
         value: 51d1e915e8f9419da98ad2fd4295ec00
 
 # This section describes the Topics of the data pipeline
-topics: []
+topics:
+  - name: tfl-bikepoint-data
+    persisted: false
+    configuration:
+      partitions: 1
+      replicationFactor: 2
+      retentionInMinutes: 1440
+      retentionInBytes: 52428800
