@@ -1,0 +1,36 @@
+# Quix Project Descriptor
+# This file describes the data pipeline and configuration of resources of a Quix Project.
+
+metadata:
+  version: 1.0
+
+# This section describes the Deployments of the data pipeline
+deployments:
+  - name: TfL BikePoint
+    application: TfL BikePoint
+    deploymentType: Service
+    version: a11e85f03eaf73ca25124dc58df4cf30e8eb0ef2
+    resources:
+      cpu: 200
+      memory: 200
+      replicas: 1
+    desiredStatus: Running
+    variables:
+      - name: output
+        inputType: OutputTopic
+        description: This is the output topic for TfL BikePoint data
+        required: true
+        value: tfl-bikepoint-data
+      - name: tfl_primary_key
+        inputType: FreeText
+        description: TfL Primary Key
+        required: true
+        value: 0bd0c50e0d104aa8b5e30c4b52da976e
+      - name: tfl_secondary_key
+        inputType: FreeText
+        description: TfL Secondary Key
+        required: true
+        value: 51d1e915e8f9419da98ad2fd4295ec00
+
+# This section describes the Topics of the data pipeline
+topics: []
